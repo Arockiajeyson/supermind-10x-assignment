@@ -32,7 +32,7 @@ export default function Upload() {
             return toast.error('Please add image for your blog')
         }
         const headers = { 'Authorization': localStorage.getItem('token') }
-        const res = await axios.post('http://localhost:3004/upload/posting', {Title,Dis,img}, { headers })
+        const res = await axios.post('https://supermind-backend.onrender.com/upload/posting', {Title,Dis,img}, { headers })
         if (res.data === 'uploaded') {
             toast.success(res.data)
             navigator('/blog')
@@ -40,7 +40,7 @@ export default function Upload() {
     }
     const goTo =async()=>{
         const headers = { 'Authorization': localStorage.getItem('token') }
-        const res = await axios.post('http://localhost:3004/upload/checking', null, { headers })
+        const res = await axios.post('https://supermind-backend.onrender.com/upload/checking', null, { headers })
         if(res.data =='Successful'){
             toast.success(res.data)
             navigator('/blog')

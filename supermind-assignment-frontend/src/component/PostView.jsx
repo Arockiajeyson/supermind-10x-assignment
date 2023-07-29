@@ -22,7 +22,7 @@ export default function PostView() {
         const func = async () => {
             console.log(localStorage.getItem('token'))
             const headers = { 'Authorization': localStorage.getItem('token') }
-            const res = await axios.post('http://localhost:3004/upload/geting', null, { headers })
+            const res = await axios.post('https://supermind-backend.onrender.com/upload/geting', null, { headers })
             setState(res.data)
         }
         func()

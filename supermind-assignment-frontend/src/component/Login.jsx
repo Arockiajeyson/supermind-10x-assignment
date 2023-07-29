@@ -16,7 +16,7 @@ export default function Login() {
     }
     const handler2 = async() => {
         const {Email,Password} =state
-        const res =await axios.post('http://localhost:3004/login',{Email,Password})
+        const res =await axios.post('https://supermind-backend.onrender.com/login',{Email,Password})
         console.log(res.data)
         if(res.data ==='Register first'){
             return toast.error(res.data)

@@ -13,7 +13,7 @@ export default function RegisterPage() {
         if(Password !== Confirmpassword){
             return toast.error("Password and confirm password must be same")
         }
-        const res =await axios.post('http://localhost:3004/register',{Email,Password})
+        const res =await axios.post('https://supermind-backend.onrender.com/register',{Email,Password})
         if(res.data ==='Successful'){
             toast.success(res.data)
             navigate('/')

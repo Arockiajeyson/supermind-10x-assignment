@@ -15,6 +15,7 @@ export default function Login() {
         navigate('/register')
     }
     const handler2 = async() => {
+        toast.success('It may take some time. please wait for a moment')
         const {Email,Password} =state
         const res =await axios.post('https://supermind-backend.onrender.com/login',{Email,Password})
         console.log(res.data)
